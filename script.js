@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
       return;
     }
     const payload = new URLSearchParams();
+    payload.set('leadSource', 'Website');
     ['name','phone','company','salary','city','loan','website'].forEach(key => payload.set(key, String(data.get(key) || '')));
     if (submit) { submit.disabled = true; submit.textContent = 'Submitting...'; }
     if (status) status.textContent = 'Submitting your enquiry...';
