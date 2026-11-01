@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
       return;
     }
     const payload = new URLSearchParams();
-    ['name','phone','salary','city','loan','website'].forEach(key => payload.set(key, String(data.get(key) || '')));
+    ['name','phone','company','salary','city','loan','website'].forEach(key => payload.set(key, String(data.get(key) || '')));
     if (submit) { submit.disabled = true; submit.textContent = 'Submitting...'; }
     if (status) status.textContent = 'Submitting your enquiry...';
     try {
