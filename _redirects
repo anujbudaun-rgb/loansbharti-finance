@@ -1,0 +1,34 @@
+# Permanent redirects to the canonical, extensionless URLs.
+# Keep these before any future wildcard rules.
+
+/index.html / 301
+/debt-consolidation.html /debt-consolidation 301
+/debt-consolidation/ /debt-consolidation 301
+/personal-loan.html /personal-loan 301
+/personal-loan/ /personal-loan 301
+/emi-calculator.html /emi-calculator 301
+/emi-calculator/ /emi-calculator 301
+/about.html /about 301
+/about/ /about 301
+/contact.html /contact 301
+/contact/ /contact 301
+/privacy-policy.html /privacy-policy 301
+/privacy-policy/ /privacy-policy 301
+/terms.html /terms 301
+/terms/ /terms 301
+/debt-consolidation-landing.html /debt-consolidation-landing 301
+/debt-consolidation-landing/ /debt-consolidation-landing 301
+/finance /finance/ 301
+/finance/index.html /finance/ 301
+/finance/news.html /finance/news 301
+/finance/news/ /finance/news 301
+/finance/what-is-dpd.html /finance/what-is-dpd 301
+/finance/what-is-dpd/ /finance/what-is-dpd 301
+/finance/how-emi-works.html /finance/how-emi-works 301
+/finance/how-emi-works/ /finance/how-emi-works 301
+/finance/what-is-cibil-score.html /finance/what-is-cibil-score 301
+/finance/what-is-cibil-score/ /finance/what-is-cibil-score 301
+/finance/credit-card-minimum-due.html /finance/credit-card-minimum-due 301
+/finance/credit-card-minimum-due/ /finance/credit-card-minimum-due 301
+/finance/idbi-bank-strike-november-2026.html /finance/idbi-bank-strike-november-2026 301
+/finance/idbi-bank-strike-november-2026/ /finance/idbi-bank-strike-november-2026 301
