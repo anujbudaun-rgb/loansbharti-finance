@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
     const data = new FormData(form);
     if (String(data.get('website') || '').trim()) return;
     if (Date.now() - startedAt < 1500) {
-      if (status) status.textContent = 'Please wait a moment and try again.';
+      if (status) { status.textContent = 'Please wait a moment and try again.'; status.style.display = 'block'; }
       return;
     }
     const phone = String(data.get('phone') || '').trim();
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
     payload.set('leadSource', 'Website');
     ['name','phone','company','salary','city','loan','website'].forEach(key => payload.set(key, String(data.get(key) || '')));
     if (submit) { submit.disabled = true; submit.textContent = 'Submitting...'; }
-    if (status) status.textContent = 'Submitting your enquiry...';
+    if (status) { status.textContent = 'Submitting your enquiry...'; status.style.display = 'block'; }
     try {
       await fetch(endpoint, {
         method: 'POST',
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
         body: payload.toString()
       });
       form.reset();
-      if (status) status.textContent = 'Thank you! Your enquiry has been submitted. Our team will contact you.';
+      if (status) { status.textContent = 'Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.'; status.style.display = 'block'; }
     } catch (error) {
-      if (status) status.textContent = 'Unable to submit right now. Please try again or call +91 95685 80025.';
+      if (status) { status.textContent = 'Unable to submit right now. Please try again or call +91 95685 80025.'; status.style.display = 'block'; }
     } finally {
       if (submit) { submit.disabled = false; submit.textContent = 'Submit Enquiry →'; }
     }
