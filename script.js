@@ -9,6 +9,37 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
   if (!forms.length) return;
   const endpoint = "https://script.google.com/macros/s/AKfycbx76WNUyfYAr4jF5J7nA_Yfui76wE_xq-6AaovVCU8q2VT7LZSBQ4S36UsyTcPgcgGVAg/exec";
 
+  function showThankYouScreen(){
+    if (document.getElementById('lbThankYouScreen')) return;
+    const screen = document.createElement('section');
+    screen.id = 'lbThankYouScreen';
+    screen.setAttribute('role','dialog');
+    screen.setAttribute('aria-modal','true');
+    screen.setAttribute('aria-labelledby','lbThankYouTitle');
+    screen.style.cssText = 'position:fixed;inset:0;z-index:2147483000;overflow-y:auto;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:linear-gradient(145deg,#f3f7ff 0%,#ffffff 52%,#edf4ff 100%);font-family:Arial,Helvetica,sans-serif;box-sizing:border-box;';
+    screen.innerHTML = `
+      <div style="width:100%;max-width:520px;background:#fff;border:1px solid #e5eaf3;border-radius:24px;padding:32px 24px;box-shadow:0 20px 60px rgba(20,55,110,.12);text-align:center;box-sizing:border-box;">
+        <div style="width:76px;height:76px;margin:0 auto 18px;border-radius:50%;background:#e8f7ee;color:#16834a;display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;">✓</div>
+        <div style="font-size:13px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:#2463b8;margin-bottom:10px;">LoansBharti</div>
+        <h1 id="lbThankYouTitle" style="font-size:32px;line-height:1.2;color:#142b4e;margin:0 0 12px;">Thank You!</h1>
+        <p style="font-size:17px;line-height:1.6;color:#42536b;margin:0 0 24px;">Your enquiry has been received. Our team will review your details and contact you shortly.</p>
+        <div style="background:#f5f8fd;border-radius:16px;padding:20px;text-align:left;margin:0 0 24px;">
+          <h2 style="font-size:17px;color:#18345b;margin:0 0 16px;">What happens next?</h2>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:12px 0;color:#40516a;font-size:14px;line-height:1.5;"><span style="background:#dceaff;color:#205db1;border-radius:50%;width:26px;height:26px;flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;">1</span><span>Our team reviews your enquiry.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:12px 0;color:#40516a;font-size:14px;line-height:1.5;"><span style="background:#dceaff;color:#205db1;border-radius:50%;width:26px;height:26px;flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;">2</span><span>We contact you to understand your requirements.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin:12px 0 0;color:#40516a;font-size:14px;line-height:1.5;"><span style="background:#dceaff;color:#205db1;border-radius:50%;width:26px;height:26px;flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;">3</span><span>We explore suitable loan consolidation options based on your profile.</span></div>
+        </div>
+        <a href="/" style="display:block;width:100%;box-sizing:border-box;background:#205bb5;color:#fff;text-decoration:none;padding:16px 20px;border-radius:12px;font-size:16px;font-weight:700;box-shadow:0 8px 18px rgba(32,91,181,.2);">Visit LoansBharti Website →</a>
+        <p style="font-size:12px;line-height:1.5;color:#7b8798;margin:18px 0 0;">Your information is handled securely. Never share OTPs, PINs or banking passwords.</p>
+        <div style="font-size:13px;color:#8490a1;margin-top:18px;">Many Loans. One EMI.</div>
+      </div>`;
+    document.body.appendChild(screen);
+    document.body.style.overflow = 'hidden';
+    const homeLink = screen.querySelector('a');
+    homeLink.addEventListener('click',function(){ document.body.style.overflow = ''; });
+    homeLink.focus();
+  }
+
   forms.forEach(function(form){
     const status = form.querySelector('#formStatus') || form.querySelector('.status');
     const submit = form.querySelector('button[type="submit"], input[type="submit"]');
@@ -80,8 +111,8 @@ document.addEventListener('DOMContentLoaded',()=>{const menu=document.getElement
           headers: {'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
           body: payload.toString()
         });
-        showStatus('Thank you! Your enquiry has been submitted successfully. Our team will contact you shortly.', true);
         form.reset();
+        showThankYouScreen();
       } catch (error) {
         showStatus('Unable to submit right now. Please try again or call +91 95685 80025.', false);
       } finally {
