@@ -58,7 +58,20 @@
 .lender-note{text-align:center;font-size:11px;line-height:1.5;color:#68758a;margin:18px auto 0;max-width:850px}
 @media(max-width:700px){.lender-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.lender-logo{min-height:90px}.lender-logo img{max-width:125px;height:32px}}
 </style>
-</head>
+<style>
+.lender-marquee{padding:15px 0 10px;background:#fff;border-block:1px solid #e8edf5;overflow:hidden}
+.lender-marquee-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.lender-marquee-head strong{font-size:14px;color:#1b355a}
+.lender-marquee-head span{font-size:11px;color:#77849a}
+.ticker-window{overflow:hidden;width:100%;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.ticker-track{display:flex;align-items:center;gap:42px;width:max-content;animation:lender-scroll 34s linear infinite}
+.ticker-logo{height:48px;width:130px;flex:0 0 130px;display:flex;align-items:center;justify-content:center}
+.ticker-logo img{display:block;max-width:120px;width:auto;height:34px;object-fit:contain}
+@keyframes lender-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lender-marquee:hover .ticker-track{animation-play-state:paused}
+.lender-note{text-align:center;font-size:10px;line-height:1.4;color:#8a95a6;margin:7px auto 0;padding:0 12px}
+@media(max-width:600px){.lender-marquee{padding:12px 0 8px}.lender-marquee-head{padding:0 16px}.ticker-track{gap:28px;animation-duration:28s}.ticker-logo{width:105px;flex-basis:105px;height:42px}.ticker-logo img{max-width:98px;height:29px}.lender-marquee-head span{font-size:10px}}
+</style></head>
 <body>
 <div class="top">LoansBharti · Many Loans. One EMI.</div>
 <header><div class="wrap nav">
@@ -89,23 +102,28 @@
 <div class="value-item"><strong>Personal assistance</strong><span>Discuss your case with our team</span></div>
 <div class="value-item"><strong>Lender-led decisions</strong><span>Final terms and approval depend on the lender</span></div>
 </div></section>
-<section class="lender-showcase" aria-label="Lender brands">
-<div class="wrap">
-<div class="home-heading"><small>FINANCIAL INSTITUTIONS</small><h2>Explore familiar lender brands</h2><p>Loan options, eligibility and availability depend on the relevant lender's current criteria.</p></div>
-<div class="lender-logo-grid">
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/hdfc/logo.svg" alt="HDFC Bank logo" loading="lazy"><span>HDFC Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/icic/logo.svg" alt="ICICI Bank logo" loading="lazy"><span>ICICI Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/utib/logo.svg" alt="Axis Bank logo" loading="lazy"><span>Axis Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/kkbk/logo.svg" alt="Kotak Mahindra Bank logo" loading="lazy"><span>Kotak Mahindra Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/idfb/logo.svg" alt="IDFC FIRST Bank logo" loading="lazy"><span>IDFC FIRST Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/indb/logo.svg" alt="IndusInd Bank logo" loading="lazy"><span>IndusInd Bank</span></div>
-<div class="lender-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/fdrl/logo.svg" alt="Federal Bank logo" loading="lazy"><span>Federal Bank</span></div>
-<div class="lender-logo"><img src="https://www.tatacapital.com/content/dam/tata-capital-web/assets/img/tcl-lime-logo.png" alt="Tata Capital logo" loading="lazy"><span>Tata Capital</span></div>
-<div class="lender-logo"><img src="https://www.bajajfinserv.in/finserv-digital-annual-report-fy26/assets/images/bajaj-finserv.png" alt="Bajaj Finserv logo" loading="lazy"><span>Bajaj Finserv</span></div>
-<div class="lender-logo"><img src="https://www.cms.adityabirla.com/uploads/aditya_birla_capital_ec3c57daeb.webp" alt="Aditya Birla Capital logo" loading="lazy"><span>Aditya Birla Capital</span></div>
-</div>
+<section class="lender-marquee" aria-label="Lender brands">
+<div class="wrap lender-marquee-head"><strong>Explore lender brands</strong><span>Availability depends on lender criteria</span></div>
+<div class="ticker-window"><div class="ticker-track"><div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/hdfc/logo.svg" alt="HDFC Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/icic/logo.svg" alt="ICICI Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/utib/logo.svg" alt="Axis Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/kkbk/logo.svg" alt="Kotak Mahindra Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/idfb/logo.svg" alt="IDFC FIRST Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/indb/logo.svg" alt="IndusInd Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/fdrl/logo.svg" alt="Federal Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.tatacapital.com/content/dam/tata-capital-web/assets/img/tcl-lime-logo.png" alt="Tata Capital logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.bajajfinserv.in/finserv-digital-annual-report-fy26/assets/images/bajaj-finserv.png" alt="Bajaj Finserv logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.cms.adityabirla.com/uploads/aditya_birla_capital_ec3c57daeb.webp" alt="Aditya Birla Capital logo" loading="lazy"></div><div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/hdfc/logo.svg" alt="HDFC Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/icic/logo.svg" alt="ICICI Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/utib/logo.svg" alt="Axis Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/kkbk/logo.svg" alt="Kotak Mahindra Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/idfb/logo.svg" alt="IDFC FIRST Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/indb/logo.svg" alt="IndusInd Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://cdn.jsdelivr.net/gh/praveenpuglia/indian-banks/assets/logos/fdrl/logo.svg" alt="Federal Bank logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.tatacapital.com/content/dam/tata-capital-web/assets/img/tcl-lime-logo.png" alt="Tata Capital logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.bajajfinserv.in/finserv-digital-annual-report-fy26/assets/images/bajaj-finserv.png" alt="Bajaj Finserv logo" loading="lazy"></div>
+<div class="ticker-logo"><img src="https://www.cms.adityabirla.com/uploads/aditya_birla_capital_ec3c57daeb.webp" alt="Aditya Birla Capital logo" loading="lazy"></div></div></div>
 <p class="lender-note">Logos are displayed for brand identification only and do not represent or guarantee an active partnership, endorsement or loan availability.</p>
-</div>
 </section>
 <section class="home-section"><div class="wrap">
 <div class="home-heading"><small>HOW WE CAN HELP</small><h2>Bring more clarity to your loan journey</h2><p>Whether you are managing existing repayments or exploring a personal loan, start by understanding the options that may fit your requirement.</p></div>
