@@ -30,3 +30,8 @@ footer{background:#10264b;color:#fff;padding:30px 0 18px}.foot{display:flex;just
 
 /* Official lender identity fallbacks */
 .lender-logo img{max-width:100%;object-fit:contain}.lender-wordmark{font-size:13px;font-weight:800;line-height:1.2;text-align:center;white-space:normal;color:#17447e;letter-spacing:.1px}
+
+
+/* Footer logo sizing: keep the brand mark compact without affecting header logo */
+footer .foot > div:first-child img{display:block;width:150px;max-width:150px;height:auto;object-fit:contain;background:#fff;border-radius:3px}
+@media(max-width:650px){footer .foot > div:first-child img{width:125px;max-width:125px}}
